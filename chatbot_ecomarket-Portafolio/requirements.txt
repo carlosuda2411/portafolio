@@ -1,0 +1,19 @@
+# Chatbot EcoMarket - Dependencias
+# Instalar con: pip install -r requirements.txt
+
+# LLM
+openai>=1.30.0
+
+# Base de datos
+# SQLite viene incluido en Python, no requiere instalación
+
+# Interfaz
+streamlit==1.37.0
+
+# Utilidades
+python-dotenv==1.0.1
+pandas==2.2.2
+
+# Notebooks
+jupyter==1.0.0
+ipykernel==6.29.5

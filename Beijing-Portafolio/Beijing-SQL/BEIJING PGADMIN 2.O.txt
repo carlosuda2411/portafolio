@@ -1,0 +1,338 @@
+-- Crear Schema 
+CREATE SCHEMA stations;
+
+-- Tabla Principal 
+CREATE TABLE stations.datos 
+    ("No" INT,
+    "year" SMALLINT NOT NULL,
+    "month" SMALLINT NOT NULL,
+    "day" SMALLINT NOT NULL,
+    "hour" SMALLINT NOT NULL,
+    "PM2.5" NUMERIC(10,2),
+    "PM10" NUMERIC(10,2),
+    "SO2" NUMERIC(10,2),
+    "NO2" NUMERIC(10,2),
+    "CO" NUMERIC(10,2),
+    "O3" NUMERIC(10,2),
+    "TEMP" NUMERIC(10,2),
+    "PRES" NUMERIC(10,2),
+    "DEWP" NUMERIC(10,2),
+    "RAIN" NUMERIC(10,2),
+    "wd" VARCHAR(10),
+    "WSPM" NUMERIC(10,2),
+    "station" VARCHAR(20) NOT NULL,
+    PRIMARY KEY ("station", "year", "month", "day", "hour"));
+
+-- Tabla Aotizhongxin
+CREATE TABLE stations.aotizhongxin 
+(LIKE stations.datos INCLUDING ALL);
+--"Crea la nueva tabla (aotizhongxin) basándote completamente en la estructura de la tabla de 
+--referencia (calidad_aire_beijing.datos), e incluye todos los elementos de definición avanzados de esa tabla."
+COPY stations.aotizhongxin 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Aotizhongxin_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Changping
+CREATE TABLE stations.Changping
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Changping  
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Changping_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Dingling
+CREATE TABLE stations.Dingling 
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Dingling 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Dingling_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Dongsi
+CREATE TABLE stations.Dongsi 
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Dongsi 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Dongsi_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Guanyuan
+CREATE TABLE stations.Guanyuan 
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Guanyuan 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Guanyuan_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Gucheng
+CREATE TABLE stations.Gucheng 
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Gucheng 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Gucheng_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Huairou
+CREATE TABLE stations.Huairou 
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Huairou 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Huairou_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Nongzhanguan
+CREATE TABLE stations.Nongzhanguan
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Nongzhanguan 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Nongzhanguan_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Shunyi
+CREATE TABLE stations.Shunyi
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Shunyi 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Shunyi_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Tiantan
+CREATE TABLE stations.Tiantan 
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Tiantan 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Tiantan_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Wanliu
+CREATE TABLE stations.Wanliu
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Wanliu 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Wanliu_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+-- Tabla Wanshouxigong
+CREATE TABLE stations.Wanshouxigong
+(LIKE stations.datos INCLUDING ALL);
+	
+COPY stations.Wanshouxigong 
+FROM 'C:\beijing+multi+site+air+quality+data\PRSA2017_Data_20130301-20170228\PRSA_Data_20130301-20170228\PRSA_Data_Wanshouxigong_20130301-20170228.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+
+INSERT INTO stations.datos
+SELECT * FROM stations.aotizhongxin UNION ALL
+SELECT * FROM stations.changping UNION ALL
+SELECT * FROM stations.dingling UNION ALL
+SELECT * FROM stations.dongsi UNION ALL
+SELECT * FROM stations.guanyuan UNION ALL
+SELECT * FROM stations.gucheng UNION ALL
+SELECT * FROM stations.huairou UNION ALL
+SELECT * FROM stations.nongzhanguan UNION ALL
+SELECT * FROM stations.shunyi UNION ALL
+SELECT * FROM stations.tiantan UNION ALL
+SELECT * FROM stations.wanliu UNION ALL
+SELECT * FROM stations.wanshouxigong;
+
+1. Los Archivos CSV (Datos de Calidad del Aire)
+Los archivos que has cargado contienen datos históricos sobre la calidad del aire en Beijing, China, recolectados entre marzo de 2013 y febrero de 2017. Cada CSV corresponde a una estación de monitoreo específica (Aotizhongxin, Changping, etc.).
+
+Estructura de las columnas:
+
+No: Número de fila (ID secuencial).
+
+year, month, day, hour: Marca de tiempo dividida en columnas (año, mes, día y hora).
+
+PM2.5 y PM10: Concentración de partículas en suspensión (las más pequeñas y peligrosas para la salud).
+
+SO2, NO2, CO, O3: Concentración de gases contaminantes (Dióxido de azufre, Dióxido de nitrógeno, Monóxido de carbono y Ozono).
+
+TEMP, PRES, DEWP: Datos meteorológicos (Temperatura, Presión y Punto de rocío).
+
+RAIN: Cantidad de lluvia.
+
+wd, WSPM: Dirección del viento (wind direction) y velocidad del viento (wind speed).
+
+station: El nombre de la estación a la que pertenecen los datos.
+
+
+2. El Código SQL: Creación de Estructura
+Tu código está diseñado para organizar estos datos en una base de datos relacional (como PostgreSQL). Aquí el desglose:
+
+A. Creación del Esquema y la Tabla Maestra
+SQL
+
+CREATE SCHEMA stations;
+CREATE TABLE stations.datos (...);
+CREATE SCHEMA: Crea un contenedor lógico llamado stations para organizar tus tablas y no mezclarlas con otras del sistema.
+
+CREATE TABLE stations.datos: Define la "plantilla" o tabla principal. Aquí es importante notar que has definido una Llave Primaria (PRIMARY KEY) compuesta por year, month, day, hour. Esto significa que en esa tabla no puede haber dos registros con la misma fecha y hora.
+
+B. Uso de Herencia de Estructura
+SQL
+
+CREATE TABLE stations.aotizhongxin (LIKE stations.datos INCLUDING ALL);
+Este comando es muy eficiente. En lugar de escribir todas las columnas para cada una de las 12 estaciones, le dices a SQL: "Crea una tabla nueva que sea exactamente igual a la tabla datos, incluyendo índices y restricciones".
+
+3. El Comando COPY (Carga de Datos)
+Este es el corazón de la importación:
+
+SQL
+
+COPY stations.aotizhongxin 
+FROM 'C:\...\archivo.csv'
+DELIMITER ','
+CSV HEADER
+NULL 'NA';
+COPY ... FROM: Es el comando más rápido para mover datos masivos de un archivo a una tabla.
+
+DELIMITER ',': Indica que las columnas en el archivo están separadas por comas.
+
+CSV HEADER: Le avisa a la base de datos que la primera fila del archivo no son datos, sino los nombres de las columnas, por lo que debe ignorarla.
+
+NULL 'NA': Este punto es clave. En tus archivos CSV, cuando falta un dato, aparece el texto "NA". Este comando le indica a SQL que convierta cada "NA" en un valor NULL (vacío) real dentro de la base de datos, lo cual es fundamental para poder hacer cálculos matemáticos después.
+
+Resumen del flujo de tu código:
+Organiza: Crea un espacio dedicado (SCHEMA).
+
+Estandariza: Define cómo deben verse los datos (TABLE datos).
+
+Replica: Crea tablas individuales para cada estación usando la plantilla.
+
+Importa: Llena cada tabla con su respectivo archivo CSV, limpiando los valores "NA" en el proceso.
+
+
+
+-- ESTACIONES MÁS CONTAMINADAS EN PROMEDIO
+SELECT 
+    station, 
+    ROUND(AVG("PM2.5"), 2) as avg_pm25,
+    ROUND(AVG("PM10"), 2) as avg_pm10
+FROM stations.datos
+GROUP BY station
+ORDER BY avg_pm25 DESC;
+
+-- Partículas PM2.5 son mas peligrosas porque tienen más penetración en e	l organismo
+-- por eso lo ordenamos por el "pm25"
+-- Relación directa entre pm2.5 y pm10
+-- La OMS recomienda una media de 5 µg/m³, solución es restringir los vehículos de combustión
+
+
+-- ESTACIONES URBANAS, SUBURBANA Y DE EXTERIOR
+SELECT 
+    CASE 
+        WHEN station IN ('Dongsi', 'Guanyuan', 'Aotizhongxin', 'Tiantan', 'Wanshouxigong', 'Nongzhanguan') THEN 'URBANA'
+        WHEN station IN ('Dingling', 'Huairou', 'Changping') THEN 'EXTERIOR'
+        WHEN station IN ('Gucheng', 'Wanliu', 'Shunyi') THEN 'SUBURBANA'
+    END as ubicacion,
+    ROUND(AVG("NO2"), 2) as no2_coches,
+    ROUND(AVG("PM2.5"), 2) as pm25_total,
+    ROUND(AVG("PM10"), 2) as pm10_total,
+    ROUND(AVG("WSPM"), 2) as velocidad_viento    
+FROM stations.datos
+GROUP BY 1
+ORDER BY pm25_total DESC;
+
+-- El NO2 es un indicador de la contaminación automovilística. La diferencia de NO2 en exterior y zonas urbanas, quiere decir que
+-- los gases de los automóviles son el responsable de la contaminación
+-- El viento, en este caso, no quiere decir que en zonas urbanas el viento es escaso, si no de exceso de contaminación
+
+
+-- CÓMO IMPACTA EL VIENTO
+SELECT 
+    CASE 
+        WHEN "WSPM" < 1 THEN 'Calma (0-1 m/s)'
+        WHEN "WSPM" BETWEEN 1 AND 3 THEN 'Brisa Ligera (1-3 m/s)'
+        ELSE 'Viento Fuerte (>3 m/s)'
+    END as categoria_viento,
+    ROUND(AVG("PM2.5"), 2) as avg_pm25
+FROM stations.datos
+GROUP BY 1
+ORDER BY avg_pm25 DESC;
+
+-- Podemos observar que a mayor velocidad del viento, menor contaminación existe
+-- debido a que en la mayoría de los casos, el aire "limpia" esa contaminación dispersándola
+-- Relación inversa
+
+
+-- ¿ES EL VIENTO ÚTIL?
+SELECT 
+    station,
+    ROUND(AVG("WSPM"), 2) as velocidad_viento,
+    ROUND(AVG("PM2.5"), 2) as media_pm25,
+    ROUND(AVG("PM10"), 2) as media_pm10,
+    ROUND((AVG("PM2.5") / NULLIF(AVG("WSPM"), 0)), 2) as estancamiento_pm25,
+    ROUND((AVG("PM10") / NULLIF(AVG("WSPM"), 0)), 2) as estancamiento_pm10
+FROM stations.datos
+GROUP BY station
+ORDER BY estancamiento_pm25 DESC;
+
+-- Correlación inversa entre velocidad del viento y la contaminación, por lo que a menor viento, mayor contaminación y viceversa.
+-- Utilizar leyes de urbanismo como en alemania para la prohibición de edificar en canales de viento naturales
+
+
+-- EVOLUCIÓN DE LA CONTAMINACIÓN
+SELECT 
+    year, 
+    ROUND(AVG("PM2.5"), 2) as media_anual_pm25,
+    MAX("PM2.5") as pico_maximo
+FROM stations.datos
+GROUP BY year
+ORDER BY year;
+
+-- La OMS recomienda una media de 5 µg/m³ y Pekín lo multiplica entre un x14 y un x18 
+-- Aumento de un 15,27% desde 2013 a 2017
+
+
+-- CONTAMINACIÓN DEPENDIENDO DE LAS HORAS
+SELECT 
+    hour, 
+    ROUND(AVG("PM2.5"), 2) as avg_pm25
+FROM stations.datos
+GROUP BY hour
+ORDER BY 1;
+
+-- Prohibir vehículos de combustión en horas puntas y promocionar transporte público eléctrico
+
+
+-- CONTAMINACIÓN POR ESTACIÓN DEL AÑO
+SELECT 
+    CASE 
+        WHEN month IN (12, 1, 2) THEN 'Invierno'
+        WHEN month IN (3, 4, 5) THEN 'Primavera'
+        WHEN month IN (6, 7, 8) THEN 'Verano'
+        WHEN month IN (9, 10, 11) THEN 'Otoño'
+    END as estacion,
+    ROUND(AVG("PM2.5"), 2) as media_pm25
+FROM stations.datos
+GROUP BY 1
+ORDER BY media_pm25 DESC;
+
+-- En épocas de frío sustituir la calefacción de carbón y similares por otras menos contaminantes
+
+-- CREACIÓN DE ALERTAS AUTOMÁTICAS CUANDO LOS ÍNDICES DE CONTAMINACIÓN SUBAN DE CIERTA CONTAMINACIÓN
+-- Y LA CONSECUENTE PROHIBICIÓN DE CIERTAS ACTIVIDADES

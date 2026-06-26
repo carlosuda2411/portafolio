@@ -1,7 +1,7 @@
 # ¡Hola! Soy Carlos Valverde Gaya 👋📊
 ### Data Analyst | Especializado en Business Analytics
 
-Bienvenido a mi portafolio de proyectos. [cite_start]Soy un profesional con formación híbrida en **Administración y Dirección de Empresas (ADE)** y un **Máster Universitario en Business Analytics**, lo que me permite actuar como *Data Translator*: entiendo las necesidades estratégicas del negocio y las resuelvo mediante el desarrollo técnico y el análisis avanzado de datos.
+Bienvenido a mi portafolio de proyectos. Soy un profesional con formación híbrida en **Administración y Dirección de Empresas (ADE)** y un **Máster Universitario en Business Analytics**, lo que me permite actuar como *Data Translator*: entiendo las necesidades estratégicas del negocio y las resuelvo mediante el desarrollo técnico y el análisis avanzado de datos.
 
 Tengo experiencia real en entornos empresariales aplicando **SQL, Python y Power BI** para la generación de informes directivos, automatización de procesos ETL y análisis financieros y sectoriales de mercado de alto impacto (modelos TAM/SAM/SOM).
 

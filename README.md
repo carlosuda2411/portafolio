@@ -9,17 +9,17 @@ Tengo experiencia real en entornos empresariales aplicando **SQL, Python y Power
 
 ## 📁 Proyectos Destacados
 
-### 1. [Predicción de la Fuga de Cerebros en España (2014–2030) 🧠✈️](./tfm-portafolio)
+### 1. Predicción de la Fuga de Cerebros en España (2014–2030) 🧠✈️
 * **Descripción:** Mi Trabajo Fin de Máster (TFM). Un ecosistema analítico integral desarrollado bajo la metodología **CRISP-DM** para modelar cuantitativamente el impacto de la brecha salarial y la sobrecualificación en el éxodo de talento cualificado en España.
 * **Foco Técnico:** Regresión Lineal Múltiple ($R^2 = 0.978$), validación de supuestos clásicos de Gauss-Markov (Shapiro-Wilk y Breusch-Pagan) y simulación estocástica de **Monte Carlo con 10,000 iteraciones** (`SciPy`) para la evaluación de riesgos.
 * **Despliegue de Negocio:** Diseño de un **Dashboard ejecutivo en Power BI** que integra análisis espacial (mapas coropléticos) y simulación dinámica de escenarios mediante **Parámetros What-If (lógica DAX avanzada)** para evaluar el impacto de políticas públicas de retención.
 
-### 2. [Breathing Beijing: Análisis Dimensional y Simulaciones Ambientales 🇨🇳🌫️](./beijing-air-quality)
+### 2. Breathing Beijing: Análisis Dimensional y Simulaciones Ambientales 🇨🇳🌫️
 * **Descripción:** Un análisis unificado en espejo para diagnosticar las dinámicas de contaminación extrema de material particulado (PM2.5) en Beijing, dividiéndose en dos aproximaciones tecnológicas independientes empleando la misma información:
   * **Fase SQL (Ingeniería de Datos):** Diseño e implementación desde cero de un **Data Warehouse (Modelo en Estrella)** bajo el esquema `beijing_dw`. Creación automatizada de tablas de hechos y dimensiones, cargas masivas (`COPY`), optimización con índices y analítica temporal avanzada mediante **Funciones de Ventana (Window Functions)** y CTEs para medir medias móviles de Ozono ($O_3$) y el "efecto lavado" de la lluvia mediante `LAG` y `LEAD`.
   * **Fase Python (Machine Learning Supervisado):** Análisis Exploratorio de Datos (EDA) estacional e implementación de flujos de trabajo automatizados mediante **`Pipelines` y `ColumnTransformer` de Scikit-Learn** (con `SimpleImputer` y `LinearRegression`). El modelo alcanzó un $R^2 = 0.669$ y sirvió como motor contrafactual para simular planes de restricción de tráfico en hora punta, demostrando que una reducción del 10% del tráfico mitiga un 12.19% el PM2.5.
 
-### 3. [Chatbot EcoMarket: Asistente Conversacional Híbrido con IA 🛒🤖](./chatbot-ecomarket)
+### 3. Chatbot EcoMarket: Asistente Conversacional Híbrido con IA 🛒🤖
 * **Descripción:** Diseño y despliegue de un asistente virtual interactivo *end-to-end* en **Streamlit** diseñado para optimizar los flujos de atención al cliente y la gestión operativa de un supermercado electrónico.
 * **Foco Técnico:** Implementación de una **arquitectura híbrida de enrutamiento** (`EcoMarketRouter`) para optimizar costes de cómputo. Un clasificador local con **NLP y pruebas unitarias (`unittest`)** absorbe consultas rutinarias (catálogo, promociones) sin consumir tokens externos. Consultas ambiguas o transaccionales son delegadas al modelo **OpenAI GPT-4o-mini**, el cual cuenta con **11 herramientas mapeadas (*Function Calling*)** para interactuar en tiempo real con una base de datos relacional `SQLite`.
 * **Impacto Operativo:** El bot gestiona de forma autónoma flujos complejos de creación de pedidos (calculando subtotales, costes de envío y aplicando promociones vigentes), consultas postventa (estados de envío, tickets de soporte) y generación inteligente de listas de compra temáticas adaptadas al presupuesto del cliente.

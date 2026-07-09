@@ -24,6 +24,11 @@ Tengo experiencia real en entornos empresariales aplicando **SQL, Python y Power
 * **Foco Técnico:** Implementación de una **arquitectura híbrida de enrutamiento** (`EcoMarketRouter`) para optimizar costes de cómputo. Un clasificador local con **NLP y pruebas unitarias (`unittest`)** absorbe consultas rutinarias (catálogo, promociones) sin consumir tokens externos. Consultas ambiguas o transaccionales son delegadas al modelo **OpenAI GPT-4o-mini**, el cual cuenta con **11 herramientas mapeadas (*Function Calling*)** para interactuar en tiempo real con una base de datos relacional `SQLite`.
 * **Impacto Operativo:** El bot gestiona de forma autónoma flujos complejos de creación de pedidos (calculando subtotales, costes de envío y aplicando promociones vigentes), consultas postventa (estados de envío, tickets de soporte) y generación inteligente de listas de compra temáticas adaptadas al presupuesto del cliente.
 
+### 4. ⚽ CAPM Football Analytics Dashboard
+* **Descripción:** Cuadro de mando decisional diseñado desde la perspectiva de un inversor residente en España para evaluar el riesgo sistemático ($\beta$) y estimar el Coste de Capital ($K_e$) de clubes de fútbol europeos cotizados (NYSE, LSE, Milán, Frankfurt).
+* **Foco Técnico:** Homogeneización de divisas históricas a EUR, correcciones econométricas robustas frente a heterocedasticidad y autocorrelación mediante errores estándar **HAC Newey-West**, análisis dinámico de inestabilidad estructural ($\beta$ rodante) y despliegue interactivo.
+* **Stack Tecnológico:** Python, Streamlit, yFinance, Statsmodels, Matplotlib, Seaborn.
+
 ---
 
 ## 🛠️ Tecnologías y Competencias Técnicas
